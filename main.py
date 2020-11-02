@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 def create_tf_dict(list_part):
     list_part = list_part.lower()
     stopword = stopwords.words('english')
-    stopword += ["else", "like", "go", "get", "let", "instead", "feel", "feelings", "feeling", "nothing", "you", "how", "are", "good"]
+    stopword += ["else", "like", "go", "get", "let", "instead", "feel", "feelings", "feeling", "nothing", "you", "how", "are", "good", "think"]
     tokens = word_tokenize(list_part)
     tokens = [w for w in tokens if w.isalpha() and w not in stopword]
 
@@ -136,7 +136,7 @@ def get_best_answer(list, stem_user_response):
 
 def generate_response(user_response, list):
     analysis = sentiment_analysis(user_response)
-    more = ["Tell me more.", "Anything else?"]
+    more = ["OK. Tell me more.", "OK. Anything else?"]
 
     if "tell me about" in user_response:
         print("Let me see...")
