@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 def create_tf_dict(list_part):
     list_part = list_part.lower()
     stopword = stopwords.words('english')
-    stopword += ["else", "like", "go", "get", "let", "instead", "feel", "feelings", "feeling", "nothing"]
+    stopword += ["else", "like", "go", "get", "let", "instead", "feel", "feelings", "feeling", "nothing", "you", "how", "are", "good"]
     tokens = word_tokenize(list_part)
     tokens = [w for w in tokens if w.isalpha() and w not in stopword]
 
@@ -142,6 +142,9 @@ def generate_response(user_response, list):
         print("Let me see...")
         return wiki_data(user_response)
 
+    if "how are you" in user_response:
+        return "I am good! How are you?"
+
     # Stem user_response
     user_response = word_tokenize(user_response)
     stem_user_response = StemTokens(user_response)
@@ -219,7 +222,7 @@ if __name__ == '__main__':
         affirmations_list.remove("")
 
 
-    print("My name is Emma Bot and I am here to help you with your anxious feelings. If you want to exit, type 'bye'.")
+    print("\nMy name is Emma Bot and I am here to help you with your anxious feelings. If you want to exit, type 'bye'.")
     print("Emma : What is your name?")
     print("> ", end="")
     user_name = input()
@@ -289,6 +292,7 @@ if __name__ == '__main__':
             flag = False
             print("Emma : Till next time, hope I helped. Here is an affirmation for you:" + "\n")
             print_lines(random.choice(affirmations_list))
+            print("\n")
             # dump
             with open(user_name + ".pickle", 'wb') as handle:
                 pickle.dump(user_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
