@@ -1,17 +1,18 @@
 # Anxiety Helping ChatBot
 ## You'll need python 3.8
 
-## To download dependencies: 
-Navigate the terminal to the project directory and enter: 
-```
-pip3 install -r requirements.txt
-```
-## You also need to download the following:
+## Download the following:
 Type python3 in the terminal, then:
 ```
 import nltk
 nltk.download('stopwords')
 nltk.download('punkt')
+```
+
+## To download dependencies: 
+Navigate the terminal to the project directory and enter: 
+```
+pip3 install -r requirements.txt
 ```
 
 ## To run:
