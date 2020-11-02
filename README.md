@@ -6,7 +6,7 @@ Navigate the terminal to the project directory and enter:
 ```
 pip3 install -r requirements.txt
 ```
-## You also need to do the following:
+## You also need to download the following:
 Type python3 in the terminal, then:
 ```
 import nltk
