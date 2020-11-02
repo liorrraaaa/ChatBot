@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 def create_tf_dict(list_part):
     list_part = list_part.lower()
     stopword = stopwords.words('english')
-    stopword += ["else", "like", "go", "get", "let", "instead", "feel", "feelings", "feeling", "nothing", "you", "how", "are", "good", "think"]
+    stopword += ["else", "like", "go", "get", "let", "instead", "feel", "feelings", "feeling", "nothing", "you", "how", "are", "good"]
     tokens = word_tokenize(list_part)
     tokens = [w for w in tokens if w.isalpha() and w not in stopword]
 
