@@ -204,7 +204,7 @@ if __name__ == '__main__':
         combined_facts_list.remove("")
 
     # COMBINED
-    with open(pathlib.Path.cwd().joinpath("combined_tips"), 'r') as f:
+    with open(pathlib.Path.cwd().joinpath("combined_tips"), 'r', encoding='utf-8') as f:
         raw_combined = f.read()
 
     clean_combined = clean_up_text(raw_combined)
